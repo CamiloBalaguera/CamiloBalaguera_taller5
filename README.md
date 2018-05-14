@@ -9,4 +9,4 @@ Sinceramente, no me fue posible guardar la animación en un archivo `cuerda.gif`
 
 ## Punto 3
 
-No se obtuvo un resultado satisfactorio si se utilizaban los parametros dados por el enunciado. No obstante, al variar los parametros, se obtuvieron datos parecidos a los esperados. Así pues, utilicé `eps = 0.8` y `dt = 0.0001` para la creación de `caos.pdf`. De igual forma, se organizó el archivo `caos.cpp` de tal forma que si se ejecuta el archivo `CB.mk` contenido en la carpeta, se realicen los calculos con los parametros dados por el enunciado.
+No se obtuvo un resultado satisfactorio si se utilizaban los parametros dados por el enunciado. No obstante, al variar los parametros, se obtuvieron datos parecidos a los esperados. Así pues, utilicé `eps = 0.8` y `dt = 0.0001` para la creación de `caos.pdf`. De igual forma, se organizó el archivo `caos.cpp` de tal forma que si se ejecuta el archivo `CB.mk` contenido en la carpeta, se realicen los calculos con los parametros dados por el enunciado. La imagen `caos.png` corresponde a graficar los datos obtenidos cada 100 iteraciones. Mientras que `caos.pdf` es el resultado de graficar cada vez que q1 cambie de signo.
