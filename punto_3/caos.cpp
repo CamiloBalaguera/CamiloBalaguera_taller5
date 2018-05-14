@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-const float dt = 0.0006;
+const float dt = 0.006;
 const float tfin = 3000.0;
 const int n = tfin/dt;
 float q1[n];
@@ -9,16 +9,18 @@ float q2[n];
 float p1[n];
 float p2[n];
 float a = 1/(2*sqrt(2)) ;
-float eps = 0.8;
+float eps = 0.001;
 float p1punto(float f1, float f2);
 float p2punto(float f1, float f2);
 float q1punto(float f1, float f2);
 float q2punto(float f1, float f2);
+float t[n];
 void RK(int i, float (*func)(float, float), float *f, float *y1, float *y2);
 
 int main()
 {
 	// Condiciones iniciales.
+	t[0] = 0.0;
 	q1[0] = a;
 	q2[0] = -a;
 	p1[0] = 0.0;
@@ -27,6 +29,7 @@ int main()
 	// Iteraciones resolviendo la ecuacion diferencial.
 	for(int i = 1; i < n; i++)
 	{
+		t[i] = t[i-1] + dt;
 		RK(i, q1punto, q1, p1, p2);
 		RK(i, p1punto, p1, q1, q2);
 		RK(i, q2punto, q2, p1, p2);
@@ -38,7 +41,11 @@ int main()
 	{	
 		if ((q1[i-1] < 0 && q1[i] > 0) || (q1[i-1] > 0 && q1[i] < 0))
 		{
-			cout << q2[i] << " " << p2[i] << endl;
+			cout << q2[i] << " " << p2[i] << " " << q1[i] << " " << p1[i] << " " << t[i] <<endl;
+		}
+		if (i%100 == 0)
+		{
+			//cout << q2[i] << " " << p2[i] << " " << q1[i] << " " << p1[i] << " " << t[i] <<endl;  
 		}
 	}
 	return 0;
