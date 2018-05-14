@@ -1,8 +1,8 @@
-basic_animation.mp4 : CB_graph.py 	cuerda.cpp
-	c++ cuerda.cpp
-	./a.out > datos.dat
-	python3 CB_graph.py
+caos.pdf : caos.py caos.cpp
+	c++ caos.cpp -o caos.x
+	./caos.x > caos.dat
+	python3 caos.py
 
-datos.dat : cuerda.cpp
-	c++ cuerda.cpp
-	./a.out > datos.dat
+caos.dat : caos.cpp
+	c++ caos.cpp -o caos.x
+	./caos.x > caos.dat
